@@ -80,10 +80,10 @@ but when i edit tracker i am actually editing fakehead since tracker is pointing
             tracker = tracker.next; // moving forward after appending a node so we attatch the next node we find to the next one whatever
 
 // if one of the lists is null then just add the remaining one to the end -- does this break if my list no because its sorted so you can just add them willy nilyl
-            if (list1 != null ) {
+            if (list1 != null && list2 == null) {
                 tracker.next = list1; // add remainign to next pointing node by tracker
             }
-            else if(list2 != null ) {
+            if(list2 != null && list1 == null) {
                 tracker.next = list2; // same but for list 2
             }
 
