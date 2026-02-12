@@ -79,12 +79,18 @@ but when i edit tracker i am actually editing fakehead since tracker is pointing
             }// end else if
             tracker = tracker.next; // moving forward after appending a node so we attatch the next node we find to the next one whatever
 
-
+// if one of the lists is null then just add the remaining one to the end -- does this break if my list no because its sorted so you can just add them willy nilyl
+            if (list1 != null ) {
+                tracker.next = list1; // add remainign to next pointing node by tracker
+            }
+            else if(list2 != null ) {
+                tracker.next = list2; // same but for list 2
+            }
 
         } // end while loop
 
 
-        return fakeHead; // return fakehead which has my new list with all the merged nodes
+        return fakeHead.next; // return fakehead which has my new list with all the merged nodes- but do next because it starts at -1
     } // END METHOD MERGETWO
 
     //PRINTING METHOD
@@ -93,7 +99,7 @@ but when i edit tracker i am actually editing fakehead since tracker is pointing
             System.out.print(head.val + " -> ");
             head = head.next;
         }
-        System.out.println("null");
         // should return 123456 as whole list and then the head would just be 1 right yes because linked list first node is the 1
     }
 }
+
